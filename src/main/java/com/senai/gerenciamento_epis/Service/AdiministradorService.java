@@ -1,8 +1,8 @@
-package Service;
+package com.senai.gerenciamento_epis.Service;
 
-import DTO.AdministradorDTO;
+import com.senai.gerenciamento_epis.DTO.AdministradorDTO;
 import Repo.AdiministradorRepository;
-import Repo.ColaboradorRepository;
+import com.senai.gerenciamento_epis.Repo.ColaboradorRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.validation.annotation.Validated;
