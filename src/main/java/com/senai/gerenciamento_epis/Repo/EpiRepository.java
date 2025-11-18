@@ -1,4 +1,7 @@
 package com.senai.gerenciamento_epis.Repo;
 
-public class EpiRepository {
+import com.senai.gerenciamento_epis.Entity.EpiEntity;
+import org.springframework.data.jpa.repository.JpaRepository;
+
+public interface EpiRepository extends JpaRepository<EpiEntity, Integer> {
 }

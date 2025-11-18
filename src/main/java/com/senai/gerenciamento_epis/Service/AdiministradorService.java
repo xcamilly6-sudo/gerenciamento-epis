@@ -2,6 +2,7 @@ package com.senai.gerenciamento_epis.Service;
 
 
 import com.senai.gerenciamento_epis.DTO.AdministradorDTO;
+import com.senai.gerenciamento_epis.Entity.AdministradorEntity;
 import com.senai.gerenciamento_epis.Repo.AdministradoRepository;
 import com.senai.gerenciamento_epis.Repo.ColaboradorRepository;
 import jakarta.validation.Valid;
@@ -22,6 +23,11 @@ public class AdiministradorService {
 
     public void cadastrarAdministrador (@Valid AdministradorDTO administradorDto){
 
+        AdministradorEntity administradorEntity= new AdministradorEntity();
+
+        administradorEntity.setNmAdministradro(administradorDto.getNmadministrador());
+
+        administradorRepo.save(administradorEntity);
 
     }
 
