@@ -10,6 +10,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.validation.annotation.Validated;
 
+import java.util.ArrayList;
+import java.util.List;
+
 @Service
 @Validated
 public class AdiministradorService {
@@ -31,6 +34,47 @@ public class AdiministradorService {
 
     }
 
+    public List<AdministradorDTO> listarAdministradores() {
+
+        List<AdministradorEntity> listaAdministradorEntity = administradorRepo.findAll();
+
+        List<AdministradorDTO> listaAdministradorDTO = new ArrayList<>();
+
+        for (AdministradorEntity d : listaAdministradorEntity) {
+
+            AdministradorDTO administradorDTO = new AdministradorDTO();
+
+            administradorDTO.setIdAdministrador(d.getIdAdiministrador());
+            administradorDTO.setNmadministrador(d.getNmAdministradro());
+
+            listaAdministradorDTO.add(administradorDTO);
+
+        }
+
+        return listaAdministradorDTO;
+
+    }
+
+    public void atualizarAdministrador(int id,@Valid AdministradorDTO departamentoDTO) {
+
+        AdministradorEntity administradorEntity = administradorRepo.findById(id).orElseThrow(() -> new RuntimeException("Departamento não existe"));
+
+        administradorEntity.setNmAdministradro(departamentoDTO.getNmadministrador());
+
+        administradorRepo.save(administradorEntity);
+    }
+
+    public void deletarAdministrador(int id){
+
+        administradorRepo.findById(id).orElseThrow(() -> new RuntimeException("Administrador não existe"));
+
+        if (colaboradorRepo.existsByAdministradorIdAdministrador(id)){
+
+        }
+
+
+
+    }
 
 
 }

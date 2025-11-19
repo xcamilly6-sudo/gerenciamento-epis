@@ -49,7 +49,6 @@ public class ColaboradorService {
             ColaboradorDTO colaboradorDTO = new ColaboradorDTO();
 
             colaboradorDTO.setIdColaborador(c.getIdColaborador());
-            colaboradorDTO.setNmColaborador(c.getNmColaborador());
 
             listaColaboradorDto.add(colaboradorDTO);
 
