@@ -4,19 +4,20 @@ import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.Size;
 import lombok.*;
 
+import java.time.LocalDate;
+
 @Getter
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
 @ToString
-
 public class EmprestimoDto {
 
-    private int idEmprestimo;
+    private Long id;
+    private String nomeFuncionario;
+    private String nomeEpi;
+    private LocalDate dataEmprestimo;
+    private LocalDate dataDevolucao;
 
-    @NotBlank(message = "Nome do emprestimo naão pode esta vazio")
-    @Size(max = 50, message = "Nome do emprestimo não pode ultrapassar 50 caracteres")
-    private String nmEmpretimo;
-
-
+    // Getters e Setters
 }

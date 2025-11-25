@@ -7,21 +7,31 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
-@Entity
-@Table(name = "Emprestimo")
+import java.time.LocalDate;
 
-@Getter
-@Setter
-@AllArgsConstructor
-@NoArgsConstructor
+@Entity
+@Table(name = "emprestimo_epi")
 public class EmprestimoEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "id_Empretimo")
-    private int idEmprestimo;
+    private Long id;
 
-    @Column(name = "nm_Emprestimo")
-    private String nmEmprestimo;
+    private String nomeFuncionario;
+    private String nomeEpi;
 
+    private LocalDate dataEmprestimo;
+    private LocalDate dataDevolucao;
+
+    public EmprestimoEntity() {}
+
+    public EmprestimoEntity(String nomeFuncionario, String nomeEpi, LocalDate dataEmprestimo, LocalDate dataDevolucao) {
+        this.nomeFuncionario = nomeFuncionario;
+        this.nomeEpi = nomeEpi;
+        this.dataEmprestimo = dataEmprestimo;
+        this.dataDevolucao = dataDevolucao;
+    }
+
+    // Getters e Setters
 }
+
